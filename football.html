@@ -8,8 +8,28 @@
   <body>
     <div id="container">
       <img src="football-template.jpg" height="700" width="400" />
+      <div id="picContainer">
+        <img
+          src="https://www.thefamouspeople.com/profiles/thumbs/juju-smith-schuster-1.jpg"
+          height="500"
+          width="350"
+        />
+      </div>
+      <div id="name" class="topLeft">
+        <p class="text">JUJU</p>
+      </div>
+      <div id="num">
+        19
+        <br />
+        2021
+      </div>
     </div>
-    
+
+    <button id="flip">FLIP</button>
+    <div id="flipSide">
+      asdf
+    </div>
+
     <style>
       #container {
         position: relative;
@@ -39,13 +59,35 @@
       .topLeft {
         position: absolute;
         top: 70px;
-        left: 150px;
+        left: 175px;
       }
       .text {
         color: white;
       }
     </style>
 
+    <script>
+      function $(id) {
+        return document.getElementById(id);
+      }
+
+      var frontSide = $("container");
+      var backSide = $("flipSide");
+      var btn = $("flip");
+      var flipped = false;
+
+      btn.addEventListener("click", flip);
+
+      function flip() {
+        if (flipped) {
+          frontSide.style.display = "block";
+          backSide.style.display = "none";
+        } else {
+          frontSide.style.display = "none";
+          backSide.style.display = "block";
+        }
+        flipped = !flipped;
+      }
+    </script>
   </body>
-  
-<html>
+</html>
